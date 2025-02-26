@@ -29,7 +29,9 @@ export default function Examples() {
   return (
     <Section id="examples" title="Examples">
       <Tabs
-        // NOTE: This is passing content in its own slot called buttons
+        //NOTE: control the type: <menu> or <div> or your custom component like tabType={MyCustomComponent} (no angle brackets)
+        tabType="menu"
+        //NOTE: This is passing content in its own SLOT called buttons
         buttons={
           <>
             <TabButton
