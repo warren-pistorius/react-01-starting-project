@@ -30,7 +30,8 @@ export default function Examples() {
     <Section id="examples" title="Examples">
       <Tabs
         //NOTE: control the type: <menu> or <div> or your custom component like tabType={MyCustomComponent} (no angle brackets)
-        tabType="menu"
+        //tabType="menu". See the default prop in the tabs = "menu"
+
         //NOTE: This is passing content in its own SLOT called buttons
         buttons={
           <>
