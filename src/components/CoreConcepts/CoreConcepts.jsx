@@ -1,11 +1,11 @@
 import React from "react";
 import CoreConcept from "./CoreConcept";
 import { CORE_CONCEPTS } from "../../data";
+import Section from "../Section/Section";
 
 export default function CoreConcepts() {
   return (
-    <section id="core-concepts">
-      <h2>Core Concepts</h2>
+    <Section id="core-concepts" title="Core Concepts">
       {/* Using the spread operator here to simplify passing in each property. 
                     See: https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/39649038#overview */}
       <ul>
@@ -19,6 +19,6 @@ export default function CoreConcepts() {
           <CoreConcept key={concept.id} {...concept} />
         ))}
       </ul>
-    </section>
+    </Section>
   );
 }
