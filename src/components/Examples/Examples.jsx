@@ -11,9 +11,25 @@ export default function Examples() {
     setSelectedTopic(selectedButton);
   }
 
+  const tabContent = (
+    <>
+      {!selectedTopic && <p>Please select a topic</p>}
+      {selectedTopic && (
+        <div id="tab-content">
+          <h3>{EXAMPLES[selectedTopic].title}</h3>
+          <p>{EXAMPLES[selectedTopic].description}</p>
+          <pre>
+            <code>{EXAMPLES[selectedTopic].code}</code>
+          </pre>
+        </div>
+      )}
+    </>
+  );
+
   return (
     <Section id="examples" title="Examples">
       <Tabs
+        // NOTE: This is passing content in its own slot called buttons
         buttons={
           <>
             <TabButton
@@ -43,16 +59,7 @@ export default function Examples() {
           </>
         }
       >
-        {!selectedTopic && <p>Please select a topic</p>}
-        {selectedTopic && (
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-            <p>{EXAMPLES[selectedTopic].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
-        )}
+        {tabContent}
       </Tabs>
     </Section>
   );
